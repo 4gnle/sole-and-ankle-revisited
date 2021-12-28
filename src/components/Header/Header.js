@@ -63,7 +63,7 @@ const MainHeader = styled.div`
 const MobileHeader = styled.div`
   display: none;
 
-  @media (${QUERIES.phoneUP}) {
+  @media (max-width: 37.5rem) {
     display: flex;
   }
 `;
@@ -73,7 +73,7 @@ const Nav = styled.nav`
   gap: 48px;
   margin: 0px 48px;
 
-  @media (${QUERIES.phoneUP}) {
+  @media (max-width: 37.5rem) {
     display: none;
   };
 `;
