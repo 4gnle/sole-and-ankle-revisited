@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
-import { QUERIES } from '../../constants';
+import { QUERIES, COLORS, WEIGHTS } from '../../constants';
 
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
@@ -15,23 +15,90 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   }
 
   return (
-    <div>
-      <button onClick={onDismiss}>Dismiss menu</button>
-      <nav>
-        <a href="/sale">Sale</a>
-        <a href="/new">New&nbsp;Releases</a>
-        <a href="/men">Men</a>
-        <a href="/women">Women</a>
-        <a href="/kids">Kids</a>
-        <a href="/collections">Collections</a>
-      </nav>
-      <footer>
-        <a href="/terms">Terms and Conditions</a>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/contact">Contact Us</a>
-      </footer>
-    </div>
+    <>
+    <Backdrop />
+
+    <Wrapper>
+      <UnstyledButton onClick={onDismiss}>
+        <Icon id="close" strokeWidth={1.5} />
+      </UnstyledButton>
+
+      <Links>
+        <NavLinks href="/sale">Sale</NavLinks>
+        <NavLinks href="/new">New&nbsp;Releases</NavLinks>
+        <NavLinks href="/men">Men</NavLinks>
+        <NavLinks href="/women">Women</NavLinks>
+        <NavLinks href="/kids">Kids</NavLinks>
+        <NavLinks href="/collections">Collections</NavLinks>
+      </Links>
+
+      <Footer>
+        <FooterLinks href="/terms">Terms and Conditions</FooterLinks>
+        <FooterLinks href="/privacy">Privacy Policy</FooterLinks>
+        <FooterLinks href="/contact">Contact Us</FooterLinks>
+      </Footer>
+    </Wrapper>
+
+    </>
   );
 };
 
 export default MobileMenu;
+
+const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.2);
+`;
+
+const Wrapper = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 15vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: white;
+  z-index: 9999;
+  justify-content: space-between;
+  padding: 1rem;
+  backdrop-filter: drop-shadow(4px 4px 10px blue);
+`;
+
+const Links = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const NavLinks = styled.a`
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: ${COLORS.gray[900]};
+  font-weight: ${WEIGHTS.medium};
+
+  &:first-of-type {
+    color: ${COLORS.secondary};
+  }
+`;
+
+const Footer = styled.footer`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+
+const FooterLinks = styled.a`
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: ${COLORS.gray[700]};
+  font-weight: ${WEIGHTS.normal};
+`;
