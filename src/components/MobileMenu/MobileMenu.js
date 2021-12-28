@@ -52,7 +52,7 @@ const Backdrop = styled.div`
   width: 100%;
   height: 100vh;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.6);
 `;
 
 const Wrapper = styled.div`
@@ -67,8 +67,9 @@ const Wrapper = styled.div`
   background-color: white;
   z-index: 9999;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 2rem;
   backdrop-filter: drop-shadow(4px 4px 10px blue);
+  transition: 0.2s;
 `;
 
 const Links = styled.nav`
