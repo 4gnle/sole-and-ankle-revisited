@@ -54,6 +54,8 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   z-index: 10;
+  overflow: hidden;
+
 `;
 
 const Backdrop = styled.div`
@@ -77,12 +79,13 @@ const MenuWrapper = styled.div`
   z-index: 9999;
   justify-content: space-between;
   padding: 2rem;
-  overflow: none;
+  overflow: hidden;
 `;
 
 const ButtonWrapper = styled.div`
-  width: 3rem;
-  text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const Links = styled.nav`

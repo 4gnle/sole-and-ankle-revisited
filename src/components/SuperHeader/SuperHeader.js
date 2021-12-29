@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   padding-left: 32px;
   padding-right: 32px;
 
-  @media (max-width: 37.5rem) {
+  @media (max-width: 59.375rem) {
     display: none;
   }
 `;

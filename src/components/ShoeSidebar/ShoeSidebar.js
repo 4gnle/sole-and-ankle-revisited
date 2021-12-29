@@ -24,7 +24,7 @@ const Sidebar = () => {
 };
 
 const Wrapper = styled.aside`
-  @media(max-width: 37.5rem) {
+  @media(max-width: 59.375rem) {
     display: none;
   }
 `;

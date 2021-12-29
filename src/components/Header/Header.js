@@ -30,16 +30,22 @@ const Header = () => {
           <NavLink href="/women">Women</NavLink>
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
+          <NavLink href="/yes">Superlongnav</NavLink>
+
         </Nav>
         <Side />
 
         <MobileHeader>
           <UnstyledButton>
-            <Icon id="shopping-bag" strokeWidth={1} />
+            <Icon id="shopping-bag" strokeWidth={2} />
+          </UnstyledButton>
+
+          <UnstyledButton>
+            <Icon id="search" strokeWidth={2} />
           </UnstyledButton>
 
           <UnstyledButton onClick={() => setShowMobileMenu(true)}>
-            <Icon id="menu" strokeWidth={1} />
+            <Icon id="menu" strokeWidth={2} />
           </UnstyledButton>
 
           <MobileMenu
@@ -58,22 +64,24 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  overflow: hidden;
 `;
 
 const MobileHeader = styled.div`
   display: none;
 
-  @media (max-width: 37.5rem) {
+  @media (max-width: 59.375rem) {
     display: flex;
+    gap: 24px;
   }
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(1rem, 8vw - 2rem, 3rem);
   margin: 0px 48px;
 
-  @media (max-width: 37.5rem) {
+  @media (max-width: 59.375rem) {
     display: none;
   };
 `;

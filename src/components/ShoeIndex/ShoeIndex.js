@@ -48,33 +48,41 @@ const Wrapper = styled.div`
   align-items: baseline;
   gap: 32px;
 
-  @media(max-width: 37.5rem) {
+  @media(max-width: 59.375rem) {
     min-width: 100%;
     align-items: center;
     flex-direction: column-reverse;
+    gap: 0;
   }
 `;
 
 const LeftColumn = styled.div`
   flex-basis: 248px;
 
-  @media(max-width: 37.5rem) {
+  @media(max-width: 59.375rem) {
     display: flex;
     width: 100%;
     flex-direction: row;
     flex-basis: 0;
-    justify-content: start;
   }
 `;
 
 const MainColumn = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1;
+
+  @media(max-width: 37.5rem) {
+    gap: 32px;
+  }
 `;
 
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+
+
 `;
 
 const Title = styled.h2`
