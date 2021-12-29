@@ -15,13 +15,15 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   }
 
   return (
-    <>
-    <Backdrop />
-
     <Wrapper>
-      <UnstyledButton onClick={onDismiss}>
-        <Icon id="close" strokeWidth={1.5} />
-      </UnstyledButton>
+    <Backdrop onClick={onDismiss} />
+
+    <MenuWrapper>
+      <ButtonWrapper>
+        <UnstyledButton onClick={onDismiss}>
+          <Icon id="close" strokeWidth={1.5} />
+        </UnstyledButton>
+      </ButtonWrapper>
 
       <Links>
         <NavLinks href="/sale">Sale</NavLinks>
@@ -37,26 +39,32 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
         <FooterLinks href="/privacy">Privacy Policy</FooterLinks>
         <FooterLinks href="/contact">Contact Us</FooterLinks>
       </Footer>
-    </Wrapper>
+    </MenuWrapper>
 
-    </>
+    </Wrapper>
   );
 };
 
 export default MobileMenu;
 
-const Backdrop = styled.div`
+const Wrapper = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
+  top: 0;
+  left: 0;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.6);
-  overflow: none;
 `;
 
-const Wrapper = styled.div`
+const Backdrop = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+`;
+
+const MenuWrapper = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -70,6 +78,11 @@ const Wrapper = styled.div`
   justify-content: space-between;
   padding: 2rem;
   overflow: none;
+`;
+
+const ButtonWrapper = styled.div`
+  width: 3rem;
+  text-align: left;
 `;
 
 const Links = styled.nav`
