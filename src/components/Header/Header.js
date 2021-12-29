@@ -70,7 +70,7 @@ const MainHeader = styled.div`
 const MobileHeader = styled.div`
   display: none;
 
-  @media (max-width: 59.375rem) {
+  @media ${QUERIES.tabletUP} {
     display: flex;
     gap: 24px;
   }
@@ -81,7 +81,7 @@ const Nav = styled.nav`
   gap: clamp(1rem, 8vw - 2rem, 3rem);
   margin: 0px 48px;
 
-  @media (max-width: 59.375rem) {
+  @media ${QUERIES.tabletUP} {
     display: none;
   };
 `;

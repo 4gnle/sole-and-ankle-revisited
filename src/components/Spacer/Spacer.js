@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import {QUERIES } from '../../constants';
 
 function getHeight({ axis, size }) {
   return axis === 'horizontal' ? 1 : size;
@@ -14,7 +15,7 @@ const Spacer = styled.span`
   height: ${getHeight}px;
   min-height: ${getHeight}px;
 
-  @media(max-width: 37.5rem) {
+  @media ${QUERIES.phoneUP} {
     display: none;
   }
 `;
